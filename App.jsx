@@ -7,16 +7,17 @@ export default function App() {
 
   function handleSubmit(e){
     e.preventDefault();
-
     setTodos((currentTodos) => {
       return [
       ...currentTodos,
       { id:crypto.randomUUID(), title: newItem, completed:false
-    },
-  ]
-  })
-  setNewItem("")
-}
+      },
+      ]
+    })
+    setNewItem("")
+  }
+
+
   function toggleTodo(id, completed){
     setTodos(currentTodos =>{
       return currentTodos.map(todo=>
@@ -28,20 +29,21 @@ export default function App() {
         })
     })
   }
+
+
   function deleteTodo(id){
     setTodos(currentTodos=> {
       return currentTodos.filter(todo => todo.id !== id)
     })
-
   }
 
-  return( 
+  return(
   <>
   <form onSubmit={handleSubmit} className="mainForm">
     <div className="form-row">
       <label htmlFor="item" >New Item</label>
-      <input value={newItem} 
-      onChange={e => setNewItem(e.target.value)} 
+      <input value={newItem}
+      onChange={e => setNewItem(e.target.value)}
       type="text" id="item"/>
     </div>
     <button className="btn">Add</button>
