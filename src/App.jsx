@@ -5,7 +5,7 @@ import { TodoForm } from "./TodoForm";
 import "./style.css";
 
 export default function App() {
-  const [text, setText] = useState('');
+
   const handleInputChange = (event) => {
     setText(event.target.value);
   };

@@ -1,5 +1,4 @@
 import { useState } from "react";
-import AutoGrowingInput from "./AutoGrowingInput";
 
 export function TodoForm({onSubmit}){
     const [newItem, setNewItem] = useState("")
