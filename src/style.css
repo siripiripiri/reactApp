@@ -1,25 +1,63 @@
 :root{
     font-size: 16px;
     font-family:"Poppins";
-    --brown:rgb(98, 64, 64);
+    --brown:#8A622A;
 }
 
 body{
-    background-color: rgb(251, 245, 191);
+    background-color: #FCF6E5;
+}
+.headerStyle{
+    display: flex;
+    color: rgb(178, 129, 129);
+
+}
+.logo{
+    width: 1.6rem;
+    height: 1.6rem;
+    margin-left: 1rem;
+    margin-right: 0.5rem;
+    fill:rgb(178, 129, 129);
+    align-self: center;
+}
+.logoTitle{
+    font-size: 1.3rem;
+}
+.container{
+    display: flex;
+    padding-top: 0;
+    margin-top: 0;
+    padding-left: 0.5rem;
+    padding-right: 0.5rem;
+    border-bottom:#8A622A solid;
+}
+.todoLogo{
+    align-self: center;
+    fill:#8A622A;
+}
+.mainTitle{
+    font-size: 2rem;
+    color: var(--brown);
+}
+.headTitle{
+    font-size: 1.6rem;
+    padding-left: 1rem;
+    color:#8A622A;
+    border-top: #8A622A solid;
+    margin-top: 3rem;
+    padding-top: 1rem;
 }
 .top{
-    margin-left: auto;
-    margin-right: auto;
+    font-size: 1.5rem;
+    margin-left: 1rem;
+    margin-top: 2rem;
 }
 .mainForm{
-    margin-left: auto;
-    margin-right: auto;
     display: block;
 }
 .form-row{
     display: flex;
     flex-direction: column;
-    margin: auto;
     font-size: 2rem;
     color: var(--brown);
 }
@@ -27,53 +65,130 @@ body{
     background-color: var(--brown);
     border-style: none;
     border-radius: 1rem;
-    height: 2rem;
+    height: 2.5rem;
     color: aliceblue;
     padding-left: 1rem;
     padding-right: 1rem;
+    width:50%;
 }
 .btn{
+    width: 50%;
     border-color: var(--brown);
     background: none;
     border-style: solid;
     border-radius: 1rem;
-    height: 2rem;
+    height: 2.2rem;
     color: var(--brown);
-    width: 100%;
     margin-top: 0.5rem;
     font-family: "Poppins";
+
 }
 .btn:hover{
     background-color: var(--brown);
     color:aliceblue;
     cursor: pointer;
 }
+
 .del-btn{
+    display: block;
     border-radius: 0.5rem;
-    margin-left: 1rem;
     border-color: rgb(247, 89, 89);
     border-style: solid;
     background: none;
     color:rgb(247, 89, 89);
+    margin-left: 1rem;
+    position:relative;
+    height:1.8rem;
+    align-self: center;
+    float:right;
+    transition:.7s ease all ;
 }
 .del-btn:hover{
     background-color:rgb(247, 89, 89);
     color:rgb(251, 245, 191);
     cursor:pointer ;
+    transition:.7s ease all ;
 }
 .list{
+    border-style: solid;
+    border-color: var(--brown);
+    border-radius: 1.5rem;
     list-style:none;
+    font-size:1.5rem;
+    color:var(--brown);
+    transition:.7s ease all ;
+    line-height: 3rem;
+    margin-left:0.5rem;
+    margin-top: 0;
+    padding: 0.5rem;
+    width:50%;
+    display: flex;
+    flex-direction: column;
 }
 
-h1{
-    font-size: 2rem;
-    color: var(--brown);
-    font-weight:400;
-}
 
-.list li label{
+
+.list li {
+    display: flex;
     cursor:pointer;
+    border-style: solid;
+    border-color: var(--brown);
+    border-radius: 1rem;
+    margin-top: 0.6rem;
+    margin-bottom: 0.6rem;
+    padding: 0.3rem;
+    justify-content: space-between;
+    transition:.7s ease all ;
 }
+
+.list li label {
+    cursor:pointer;
+    margin-left: 0.5rem;
+    display: flex;
+}
+
+input::placeholder{
+    color:#D2CBB9;
+    font-family: Poppins;
+}
+
 .list li input {
+    outline: none;
+    width: 0;
+    height: 0;
+    appearance: none;
+    pointer-events: none;
+    position: absolute;
     cursor:pointer;
-}
+  }
+  
+  .list li label::before {
+    content: "";
+    width: 0.9rem;
+    height: 0.9rem;
+    background: none;
+    border-radius: 1rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: #8A622A solid;
+    transition:.7s ease all ;
+    align-self: center;
+    margin-right: 0.6rem;
+  }
+  
+  .list li label:hover::before {
+    background: var(--brown);
+  }
+  
+  .list li:has(input:checked) label::before {
+    content: "✷";
+    background: var(--brown);
+    color:#FCF6E5 ;
+    font-size: 0.9rem;
+    text-align: center;
+  }
+  .list li:has(input:checked) label {
+    color:#d5acac;
+    transition: .7s ease all;
+  }

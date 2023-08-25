@@ -5,6 +5,15 @@ import { TodoForm } from "./TodoForm";
 import "./style.css";
 
 export default function App() {
+  const [text, setText] = useState('');
+  const handleInputChange = (event) => {
+    setText(event.target.value);
+  };
+
+  const calculateInputHeight = (value) => {
+    const lineHeight = 20; // Adjust as needed
+    return value.split('\n').length * lineHeight;
+  };
 
   const [todos, setTodos] = useState(() => {
     const localValue = localStorage.getItem("ITEMS")
@@ -48,8 +57,8 @@ export default function App() {
 
   return(
   <>
-  <TodoForm onSubmit={addTodo}/>
-  <h1 className="headTitle">To-do List</h1>
+  <TodoForm onSubmit={addTodo} handleInputChange={handleInputChange} calculateInputHeight={calculateInputHeight}/>
+  <h1 className="headTitle">Current :</h1>
   <ActualList todos={todos} toggleTodo={toggleTodo} deleteTodo={deleteTodo}/>
   </>
   )

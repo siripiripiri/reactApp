@@ -1,4 +1,5 @@
 import { useState } from "react";
+import AutoGrowingInput from "./AutoGrowingInput";
 
 export function TodoForm({onSubmit}){
     const [newItem, setNewItem] = useState("")
@@ -18,7 +19,7 @@ export function TodoForm({onSubmit}){
             <label className="top" htmlFor="item" >New Item</label>
                 <input value={newItem}
                     onChange={e => setNewItem(e.target.value)}
-                    type="text" id="item"/>
+                    type="text" id="item" placeholder="Type here!"/>
         </div>
         <button className="btn">Add</button>
     </form>
